@@ -1,4 +1,4 @@
-# BESS Coding Agent Project
+# BESS Coding Agent
 
 ## Overview
 The **BESS Coding Agent Project** is designed to assist with analyzing Day-Ahead Market (DAM) prices and optimizing battery energy storage system (BESS) operations. This project leverages AI tools to determine optimal charge/discharge hours, simulate trading strategies, and summarize market data.
@@ -20,4 +20,4 @@ I also have a data_fetcher.py that can be used to fetch and store data unde the 
    pip install -r requirements.txt
 3. Run the following command to see the agent in action.
    ```bash
-   python energy_agent.py   
+   python energy_agent.py
