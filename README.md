@@ -16,6 +16,8 @@ I also have a data_fetcher.py that can be used to fetch and store data unde the 
    git clone https://github.com/your-username/BESS-Coding-Agent.git
    cd BESS-Coding-Agent
 2. Run the following command to install required packages
-   '''pip install -r requirements.txt
+   ```bash
+   pip install -r requirements.txt
 3. Run the following command to see the agent in action.
-   '''python energy_agent.py   
+   ```bash
+   python energy_agent.py   
