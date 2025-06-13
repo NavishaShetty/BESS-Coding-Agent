@@ -5,7 +5,7 @@ from smolagents import tool
 df = pd.read_csv("/Users/navisha/Desktop/PROJECTS/AI-Agents/BESS-Coding-Agent/data/dam_historical_prices_data.csv")
 
 @tool
-def optimal_charge_discharge_hours(settlement_point: str) -> str:
+def optimal_charge_discharge_hours(settlement_point: str) -> tuple[float, float]:
     """
     Determines the best hours to charge and discharge based on DAM prices.
 
@@ -18,10 +18,11 @@ def optimal_charge_discharge_hours(settlement_point: str) -> str:
     local_df = df[df['settlementPointName'] == settlement_point]
     lowest = local_df.nsmallest(2, 'settlementPointPrice')
     highest = local_df.nlargest(2, 'settlementPointPrice')
-    return (
-        f"Best hours to CHARGE (lowest prices):\n{lowest[['hourEnding','settlementPointPrice']].to_string(index=False)}\n\n"
-        f"Best hours to DISCHARGE (highest prices):\n{highest[['hourEnding','settlementPointPrice']].to_string(index=False)}"
-    )
+    # print(
+    #     f"Best hours to CHARGE (lowest prices):\n{lowest[['hourEnding','settlementPointPrice']].to_string(index=False)}\n\n"
+    #     f"Best hours to DISCHARGE (highest prices):\n{highest[['hourEnding','settlementPointPrice']].to_string(index=False)}"
+    # )
+    return (lowest[['hourEnding','settlementPointPrice']], highest[['hourEnding','settlementPointPrice']])
 
 @tool
 def simulate_bess_trading(settlement_point: str, bess_capacity_mwh: float = 1.0) -> str:
