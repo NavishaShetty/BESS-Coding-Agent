@@ -1,7 +1,7 @@
 import pandas as pd
 from smolagents import CodeAgent, OpenAIServerModel, GradioUI
 from config.helper import get_openrouter_api_key
-from tools.tools import optimal_charge_discharge_hours, simulate_bess_trading, market_summary
+from tools.tools import load_prices, _extreme, get_highest_price, get_lowest_price, get_cheapest_charge_window, get_best_discharge_window, get_price_spread, get_cycle_profit, count_expensive_hours, count_cheap_hours
 
 class EnergyAgent():
     def __init__(self):
@@ -17,9 +17,16 @@ class EnergyAgent():
         )
 
         tools = [
-            optimal_charge_discharge_hours,
-            simulate_bess_trading,
-            market_summary
+            load_prices,
+            _extreme,
+            get_highest_price,
+            get_lowest_price,
+            get_cheapest_charge_window,
+            get_best_discharge_window,
+            get_price_spread,
+            get_cycle_profit,
+            count_expensive_hours,
+            count_cheap_hours   
         ]
 
         agent = CodeAgent(
@@ -41,7 +48,7 @@ if __name__ == "__main__":
     energy_agent = EnergyAgent()
 
     # Example task to run
-    energy_agent.run(task= "Given the DAM price data, what are the best hours to charge and discharge at LZ_WEST?")
+    energy_agent.run(task= "Given the DAM price data, what are the best hours to charge and discharge at LZ_WEST? and what is the expected profit from one cycle of charge and discharge if my battery has 2kwh energy?")
 
     # Uncomment the line below to start the UI
     energy_agent.start_ui()
