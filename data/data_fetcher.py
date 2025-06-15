@@ -40,12 +40,12 @@ if __name__ == "__main__":
 
     #Add your base_url here
     #base_url = "https://api.modoenergy.com/pub/v1/us"
-    #base_url = "https://api.modoenergy.com/pub/v1/us/ercot/dam/historical-prices"    
-    base_url = "https://api.modoenergy.com/pub/v1/us/ercot/system/demand"
+    base_url = "https://api.modoenergy.com/pub/v1/us/ercot/dam/historical-prices"    
+    #base_url = "https://api.modoenergy.com/pub/v1/us/ercot/system/demand"
     
     data = fetcher.fetch_data(base_url, start_date, end_date)
     print(data.head())
 
     # Change the name of the csv file as per the data fetched
-    data.to_csv("ercot_system_demand_2025.csv", index=False)
+    data.to_csv("dam_historical_prices_data_may31_2025.csv", index=False)
     
