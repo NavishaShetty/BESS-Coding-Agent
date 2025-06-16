@@ -1,5 +1,5 @@
 import os
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 
 # Load environment variables
 load_dotenv()
@@ -15,6 +15,7 @@ class Config:
     
     # Model Configuration
     DEFAULT_MODEL = "qwen/qwen-2-72b-instruct"
+    MODEL = "qwen/qwen-2.5-72b-instruct:free"
     
     # Data Directories
     DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
@@ -23,6 +24,7 @@ class Config:
     # Create directories if they don't exist
     os.makedirs(DATA_DIR, exist_ok=True)
     os.makedirs(CACHE_DIR, exist_ok=True)
+
 
 # Initialize config
 config = Config()

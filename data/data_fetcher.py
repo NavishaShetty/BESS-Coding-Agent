@@ -20,30 +20,28 @@ class DataFetcher:
             response.raise_for_status()
             data = response.json()
             df = pd.DataFrame(data)
-            print(df)
-            # parsing json and converting to dataframe
-            result_df = pd.json_normalize(df['results'])
-            return result_df
+            return df
         except Exception as e:
             print(f"Error fetching data: {e}")
             return pd.DataFrame()
-
-    def get_available_regions(self):
-        """Get list of available regions."""
-        return ["ERCOT", "CAISO"]
+    
+    def parse_json_to_dataframe(self, json_data):
+        """Parse JSON data to a pandas DataFrame."""
+        result_df = pd.json_normalize(json_data['results'])
+        return result_df
 
 if __name__ == "__main__":
     # Example usage
-    fetcher = DataFetcher()
+    get_data = DataFetcher()
     start_date = "2024-05-31"
     end_date = "2025-05-31"
 
     #Add your base_url here
-    #base_url = "https://api.modoenergy.com/pub/v1/us"
     base_url = "https://api.modoenergy.com/pub/v1/us/ercot/dam/historical-prices"    
-    #base_url = "https://api.modoenergy.com/pub/v1/us/ercot/system/demand"
     
-    data = fetcher.fetch_data(base_url, start_date, end_date)
+    raw_data = get_data.fetch_data(base_url, start_date, end_date)
+    data = get_data.parse_json_to_dataframe(raw_data)
+
     print(data.head())
 
     # Change the name of the csv file as per the data fetched
