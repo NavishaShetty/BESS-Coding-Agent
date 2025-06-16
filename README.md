@@ -23,18 +23,6 @@
 All of that is wrapped in a clean Python package that you can pip‑install, test, and extend.
 
 ---
-## Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/BESS-Coding-Agent.git
-   cd BESS-Coding-Agent
-2. Run the following command to install required packages
-   ```bash
-   pip install -r requirements.txt
-3. Run the following command to see the agent in action.
-   ```bash
-   python energy_agent.py
-
 
 ## 🚀 Quick start
 
@@ -46,10 +34,11 @@ git clone https://github.com/yourusername/navishashetty-bess-coding-agent.git
 
 cd navishashetty-bess-coding-agent
 
+# activate virtual env
 python -m venv .venv && source .venv/bin/activate
 
 # install package in editable mode
-pip install -e .  # pulls requirements.txt automatically
+pip install -e .  
 ```
 
 ### 2. Configure secrets
@@ -63,8 +52,9 @@ OPENROUTER_API_KEY=abc‑...
 ### 3. See it in action with monitoring UI + chat UI:
 
 ```bash
-# Launch Gradio chat UI *and* Phoenix telemetry dashboard
+# Launch Gradio chat UI and Phoenix telemetry dashboard
 python agent_in_action.py
+
 # chat UI → browser: http://127.0.0.1:7860/ 
 # logs → Phoenix: http://localhost:6006/ 
 ```
@@ -73,14 +63,13 @@ python agent_in_action.py
 
 ```bash
 python examples/agent.py 
-
-# exampole: task="What is the expected profit if I charge during the cheapest window and discharge in the most expensive at LZ_WEST?"
 ```
 
 ### 5. Evaluate tool use across many prompts
 
 ```bash
-python evaluation.py  # writes energy_agent/evaluation_results.csv
+python evaluation.py
+# writes evaluation_results.csv to evaluate agent performance  
 ```
 
 ### 6. Example Usage 
@@ -95,17 +84,17 @@ python examples/agent.py
 ### 7. Data refresh
 
 ```bash
-python energy_agent/data/data_fetcher.py  # grabs latest prices, rewrites CSV
+# fetch data from Modo energy API 
+python energy_agent/data/data_fetcher.py  
 ```
 
-Point your tools at the new file and you’re good.
-
----
+Point your tools at the new data file to use latest data.
 
 ### 8. Testing
 
 ```bash
-pytest -q        # runs tests/test_*.py
+# run test cases
+pytest -q 
 ```
 
 ---
@@ -146,4 +135,4 @@ navishashetty-bess-coding-agent/
 * [Arize Phoenix](https://github.com/Arize-ai/phoenix) for zero‑config LLM tracing.
 * [Modo Energy](https://modo.energy/) for public DAM price APIs.
 
-> *Created by Navisha Shetty.*
+---
