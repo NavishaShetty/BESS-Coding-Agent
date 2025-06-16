@@ -9,7 +9,7 @@ class Config:
     OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
     OPENROUTER_API_BASE = "https://openrouter.ai/api/v1"
     
-    # Modo Energy API Configuration (you'll need to get these from Modo Energy)
+    # Modo Energy API Configuration
     MODO_API_KEY = os.getenv("MODO_API_KEY")
     MODO_API_BASE = "https://api.modo.energy"
     

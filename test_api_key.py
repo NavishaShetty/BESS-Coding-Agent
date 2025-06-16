@@ -2,12 +2,11 @@
 # This script checks if the OpenRouter API key is valid by making a simple request to the OpenAI API.
 
 from openai import OpenAI
-from config.helper import get_openrouter_api_key
-
+from config import config
 
 client = OpenAI(
-  base_url= "https://openrouter.ai/api/v1",
-  api_key= get_openrouter_api_key(),
+  base_url= config.OPENROUTER_API_BASE,
+  api_key= config.OPENROUTER_API_KEY,
 )
 
 completion = client.chat.completions.create(
