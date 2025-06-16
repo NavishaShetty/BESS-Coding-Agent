@@ -1,6 +1,6 @@
 import phoenix as px
 from phoenix.otel import register
-from energy_agent import EnergyAgent
+from energy_agent.energy_agent import EnergyAgent
 from openinference.instrumentation.smolagents import SmolagentsInstrumentor
 
 PROJECT_NAME = "energy_agent"

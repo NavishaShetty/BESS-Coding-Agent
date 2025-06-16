@@ -1,9 +1,9 @@
 import phoenix as px
-from config import config
+from energy_agent.config import config
 from phoenix.otel import register
 from smolagents import CodeAgent, OpenAIServerModel, GradioUI
 from openinference.instrumentation.smolagents import SmolagentsInstrumentor
-from tools.tools import load_prices, _extreme, get_highest_price, get_lowest_price, get_cheapest_charge_window, get_best_discharge_window, get_price_spread, get_cycle_profit, count_expensive_hours, count_cheap_hours
+from energy_agent.tools import load_prices, _extreme, get_highest_price, get_lowest_price, get_cheapest_charge_window, get_best_discharge_window, get_price_spread, get_cycle_profit, count_expensive_hours, count_cheap_hours
 
 class EnergyAgent():
     def __init__(self):

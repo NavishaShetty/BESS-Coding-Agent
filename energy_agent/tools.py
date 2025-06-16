@@ -3,7 +3,7 @@ from smolagents import tool
 from typing import Dict, List
 
 # Load DataFrame
-dam = pd.read_csv("/Users/navisha/Desktop/PROJECTS/AI-Agents/BESS-Coding-Agent/data/dam_historical_prices_data_may31_2025.csv")
+dam = pd.read_csv("energy_agent/data/dam_historical_prices_data_may31_2025.csv")
 
 # ------------------------------------loading & filtering data--------------------------------------
 @tool
