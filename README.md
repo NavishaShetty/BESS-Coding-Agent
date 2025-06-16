@@ -5,7 +5,6 @@
 ---
 
 <div align="center">
-  <img src="https://img.shields.io/github/license/yourusername/navishashetty-bess-coding-agent" alt="MIT License" />
   <img src="https://img.shields.io/badge/Built%20with-SmolAgents-blue" alt="SmolAgents" />
   <img src="https://img.shields.io/badge/Telemetry-Arize&nbsp;Phoenix-ff69b4" alt="Phoenix" />
 </div>
