@@ -113,8 +113,11 @@ def get_price_spread(df: pd.DataFrame) -> float:
     Args:
         df: DataFrame with rows for a particular settlement point
     Returns:
-        float: Price spread (USD/MWh)
+        float: Price spread (USD/MWh). Returns 0 if DataFrame is empty.
     """
+    if df.empty:
+        return 0.0
+        
     hi = df["settlementPointPrice"].max()
     lo = df["settlementPointPrice"].min()
     return round(hi - lo, 2)
