@@ -10,7 +10,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-  model="qwen/qwen-2.5-72b-instruct:free",
+  model=config.MODEL,
   messages=[
     {
       "role": "user",
