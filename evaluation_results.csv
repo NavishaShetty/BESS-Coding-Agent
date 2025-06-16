@@ -1,0 +1,7 @@
+request,tool_calls_performed,is_correct
+What is the lowest price in the day for charging at settlement point LZ_WEST?,"{'get_lowest_price', '_extreme', 'load_prices', 'final_answer'}",True
+What is the highest price in the day for discharging at settlement point LZ_WEST?,"{'_extreme', 'load_prices', 'final_answer', 'get_highest_price'}",True
+What would be the cycle profit if I charge during best charge window and discharge during best discharge window on an average at LZ_WEST?,"{'load_prices', 'final_answer', '_hours_where', 'get_cycle_profit', 'get_best_discharge_window', 'get_cheapest_charge_window'}",True
+Which region has the highest energy demand?,"{'_extreme', 'load_prices', 'final_answer', 'get_highest_price'}",False
+What's the weather in California right now?,"{'load_prices', 'final_answer'}",False
+How many hours are there in the best charge window at HB_HOUSTON?,"{'_hours_where', 'load_prices', 'final_answer', 'get_cheapest_charge_window'}",True

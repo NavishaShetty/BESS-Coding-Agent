@@ -1,8 +1,6 @@
 import pandas as pd
 from smolagents import tool
-
-from pathlib import Path
-from typing import Dict, List, Tuple, Callable
+from typing import Dict, List
 
 # Load DataFrame
 dam = pd.read_csv("/Users/navisha/Desktop/PROJECTS/AI-Agents/BESS-Coding-Agent/data/dam_historical_prices_data_may31_2025.csv")
@@ -121,7 +119,7 @@ def get_price_spread(df: pd.DataFrame) -> float:
     lo = df["settlementPointPrice"].min()
     return round(hi - lo, 2)
 
-# ---------------------------------one cycle profit---------------------------------------
+# ---------------------------------profit calculation---------------------------------------
 @tool
 def get_cycle_profit(
     battery_mwh: float = 1.0,
