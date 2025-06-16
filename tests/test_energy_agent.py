@@ -1,7 +1,7 @@
 import pytest
 from unittest.mock import patch, MagicMock
-from energy_agent import EnergyAgent
-from config import config
+from energy_agent.energy_agent import EnergyAgent
+from energy_agent.config import config
 
 @pytest.fixture
 def energy_agent():

@@ -30,21 +30,16 @@ spans = px.Client().get_spans_dataframe(project_name="energy_agent_evaluation")
 # Processing the spans dataframe to get the tool calls performed by the agent for each request
 agents = spans[spans['span_kind'] == 'AGENT'].copy()
 agents['task'] = agents['attributes.input.value'].apply(
-    lambda x: json.loads(x).get('task') if isinstance(x, str) else None
-)
+    lambda x: json.loads(x).get('task') if isinstance(x, str) else None)
 
-tools = spans.loc[
-    spans['span_kind'] == 'TOOL',
-    ["attributes.tool.name", "attributes.input.value", "context.trace_id"]
-].copy()
+tools = spans.loc[spans['span_kind'] == 'TOOL',["attributes.tool.name", "attributes.input.value", "context.trace_id"]].copy()
 
-tools_per_task = agents[
-    ["name", "start_time", "task", "context.trace_id"]
-].merge(
-    tools,
-    on="context.trace_id",
-    how="left",
-)
+tools_per_task = agents[["name", "start_time", "task", "context.trace_id"]
+                    ].merge(
+                        tools,
+                        on="context.trace_id",
+                        how="left",
+                    )
 
 # Function to check if the tool calls match the expected tools for each request
 def score_request(expected_tool, tool_calls):

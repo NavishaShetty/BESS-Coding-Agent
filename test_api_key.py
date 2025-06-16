@@ -2,7 +2,7 @@
 # This script checks if the OpenRouter API key is valid by making a simple request to the OpenAI API.
 
 from openai import OpenAI
-from config import config
+from energy_agent.config import config
 
 client = OpenAI(
   base_url= config.OPENROUTER_API_BASE,
