@@ -31,7 +31,7 @@ All of that is wrapped in a clean Python package that you can pip‑install, tes
 # clone + create env (Python ≥ 3.11)
 git clone https://github.com/yourusername/navishashetty-bess-coding-agent.git
 
-cd navishashetty-bess-coding-agent
+cd BESS-Coding-Agent
 
 # activate virtual env
 python -m venv .venv && source .venv/bin/activate
