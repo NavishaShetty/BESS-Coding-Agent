@@ -13,7 +13,7 @@
 
 **BESS Coding Agent** is an end‑to‑end reference project that shows how an LLM can:
 
-1. **Analyse Day‑Ahead‑Market (DAM) prices** for ERCOT energy market.
+1. **Analyse Day‑Ahead‑Market (DAM) prices** for energy market.
 2. **Recommend optimal charge / discharge windows** for a battery‑energy‑storage system (BESS).
 3. **Simulate round‑trip profits** under different efficiencies and capacities.
 4. **Expose a chat UI** (Gradio) so traders can ask ad‑hoc questions.
