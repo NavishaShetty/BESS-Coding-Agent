@@ -16,6 +16,7 @@ setup(
         "python-dateutil>=2.8.0",
         "pytz>=2021.1",
         "smolagents==1.17.0",
+        "smolagents[gradio]=1.16.0",
         "arize-phoenix==10.12.0",
         "openinference-instrumentation-smolagents==0.1.13",
     ]

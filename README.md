@@ -48,6 +48,10 @@ Create a **.env** file at repo root (refer `.env-example`) and add your API keys
 OPENROUTER_API_KEY=abc‑...
 ```
 
+```bash
+export OPENROUTER_API_KEY=
+```
+
 ### 3. See it in action with monitoring UI + chat UI:
 
 ```bash
@@ -98,7 +102,7 @@ pytest -q
 
 ---
 
-## 🧰 Features & architecture
+## 📖 Features & architecture
 
 | Layer         | File / Module                                               | What it does                                                                                                                            |
 | ------------- | ----------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
@@ -125,13 +129,5 @@ navishashetty-bess-coding-agent/
 ├── tests/                  # pytest unit tests
 └── README.md
 ```
-
----
-
-## 🙏 Acknowledgements
-
-* [SmolAgents](https://github.com/huggingface/smolagents) for the lightweight agent framework.
-* [Arize Phoenix](https://github.com/Arize-ai/phoenix) for zero‑config LLM tracing.
-* [Modo Energy](https://modo.energy/) for public DAM price APIs.
 
 ---
